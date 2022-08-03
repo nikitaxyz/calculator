@@ -31,7 +31,7 @@ public class CalculatorModel {
       case "<-":
         return number.substring(0,number.length() - 1);
       case ".":
-        return number + ".";
+        return number.contains(".") ? number : number + ".";
       case "+/-":
           if (number.charAt(0) == '-') {
             return number.substring(1);

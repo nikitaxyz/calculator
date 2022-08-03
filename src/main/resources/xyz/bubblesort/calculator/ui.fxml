@@ -19,45 +19,45 @@
     </StackPane>
 
     <HBox spacing="5" alignment="CENTER">
-        <Button text="\%" styleClass="button" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="CE" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="C" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="&lt;-" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
+        <Button text="\%" styleClass="button" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="CE" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="C" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="&lt;-" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
     </HBox>
 
     <HBox spacing="5" alignment="CENTER">
-        <Button text="1/x" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="x^2" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="x^1/2" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="/" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
+        <Button text="1/x" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="x^2" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="x^1/2" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="/" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
     </HBox>
 
     <HBox spacing="5" alignment="CENTER">
-        <Button text="7" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="8" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="9" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="*" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
+        <Button text="7" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="8" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="9" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="*" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
     </HBox>
 
     <HBox spacing="5" alignment="CENTER">
-        <Button text="4" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="5" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="6" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="-" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
+        <Button text="4" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="5" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="6" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="-" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
     </HBox>
 
     <HBox spacing="5" alignment="CENTER">
-        <Button text="1" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="2" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="3" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="+" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
+        <Button text="1" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="2" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="3" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="+" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
     </HBox>
 
     <HBox spacing="5" alignment="CENTER">
-        <Button text="+/-" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="0" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumpad" />
-        <Button text="." minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
-        <Button text="=" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperator" />
+        <Button text="+/-" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="0" minWidth="80" minHeight="60" font="$FONT" onAction="#processNumber" />
+        <Button text="." minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
+        <Button text="=" minWidth="80" minHeight="60" font="$FONT" onAction="#processOperation" />
     </HBox>
     <stylesheets>
         <URL value="@style.css" />
