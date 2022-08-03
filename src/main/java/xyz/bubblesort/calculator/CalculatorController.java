@@ -14,13 +14,12 @@ public class CalculatorController {
   @FXML
   private Text output;
 
-  private String operator = "";
+  private Operation operation;
   private double number1 = 0;
   private boolean start = true;
 
   private final Set<String> singleOperators = new HashSet<>(Arrays.asList(".", "+/-", "1/x", "x^2", "x^1/2", "%", "CE", "C", "<-"));
 
-  private boolean decimalSeparator = false;
   private final CalculatorModel model = new CalculatorModel();
 
   @FXML
@@ -29,37 +28,44 @@ public class CalculatorController {
       output.setText("");
       start = false;
     }
-    String value = ((Button)event.getSource()).getText();
-    output.setText(output.getText() + value);
+    String operationName = ((Button)event.getSource()).getText();
+    output.setText(output.getText() + operationName);
   }
 
   @FXML
   private void processOperator(ActionEvent event) {
-    String value = ((Button)event.getSource()).getText();
-    if (!"=".equals(value)) {
+    String operationName = ((Button)event.getSource()).getText();
+    if (!"=".equals(operationName)) {
       if (!output.getText().isEmpty()) {
         number1 = Double.parseDouble(output.getText());
       } else {
         number1 = 0;
       }
-      if (!operator.isEmpty()) return;
-      operator = value;
-      if (singleOperators.contains(operator)) {
-        if (!operator.equals(".") || !decimalSeparator) {
-          output.setText(model.calculate(output.getText(), operator));
+      if (!operationName.equals(".") && operation != null ) return;
+      for (Operation op : Operation.values()) {
+        if (op.getName().equals(operationName)) {
+          operation = op;
+          break;
         }
-        if (operator.equals(".") && !decimalSeparator) {
-          decimalSeparator = true;
+      }
+      if (operation == null) {
+        throw new IllegalArgumentException("Operation does not exist");
+      }
+      if (operationName.equals(".")) {
+        if (!output.getText().contains(".")) {
+          output.setText(model.calculate(output.getText(), operation));
         }
-        operator = "";
       } else {
-        output.setText("");
+        if (singleOperators.contains(operation.getName())) {
+          output.setText(model.calculate(output.getText(), operation));
+          operation = null;
+        }
       }
     } else {
-      if (operator.isEmpty()) return;
+      if (operation == null) return;
       output.setText(String.valueOf(model.calculate(number1, Double.parseDouble(output.getText()),
-            operator)));
-      operator = "";
+            operation)));
+      operation = null;
       start = true;
     }
   }

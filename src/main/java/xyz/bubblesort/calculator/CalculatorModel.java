@@ -1,8 +1,8 @@
 package xyz.bubblesort.calculator;
 
 public class CalculatorModel {
-  public double calculate(double number1, double number2, String operator) {
-    switch (operator) {
+  public double calculate(double number1, double number2, Operation operation) {
+    switch (operation.getName()) {
       case "+":
         return number1 + number2;
       case "-":
@@ -16,13 +16,13 @@ public class CalculatorModel {
           return number1 / number2;
         }
     }
-    System.out.println("Unknown operator - " + operator);
+    System.out.println("Unknown operation - " + operation);
     return 0;
   }
 
-  public String calculate(String number, String operator) {
+  public String calculate(String number, Operation operation) {
     if (number.isEmpty()) return number;
-    switch (operator) {
+    switch (operation.getName()) {
       case "%":
         return String.valueOf(Double.parseDouble(number) / 100);
       case "C":
@@ -46,7 +46,7 @@ public class CalculatorModel {
       case "x^1/2":
         return String.valueOf(Math.sqrt(Double.parseDouble(number)));
     }
-    System.out.println("Unknown operator - " + operator);
+    System.out.println("Unknown operation - " + operation);
     return "";
   }
 
